@@ -1,10 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
-const SignIn = () => {
+const SignUp = () => {
   const [formData, setFormData] = useState({});
-  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({
@@ -17,24 +16,23 @@ const SignIn = () => {
     e.preventDefault();
     try {
       setLoading(true);
-
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       const data = await res.json();
       if (data.success === false) {
+        setLoading(false);
+        setError(data.message);
         return;
       }
-
-      navigate("/");
       setLoading(false);
-
-      console.log(formData);
+      setError(null);
+      navigate("/sign-in");
     } catch (error) {
-      setError(error);
-      console.log(error);
+      setLoading(false);
+      setError(error.message);
     }
   };
 
@@ -43,6 +41,13 @@ const SignIn = () => {
       <div className="p-3 w-1/3 mx-auto">
         <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="username"
+            id="username"
+            className="p-3 border rounded-lg "
+            onChange={handleChange}
+          />
           <input
             type="text"
             placeholder="email"
@@ -75,4 +80,4 @@ const SignIn = () => {
     </div>
   );
 };
-export default SignIn;
+export default SignUp;
