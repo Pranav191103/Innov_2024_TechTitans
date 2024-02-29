@@ -29,7 +29,7 @@ const SignUp = () => {
       }
       setLoading(false);
       setError(null);
-      navigate("/sign-in");
+      navigate("/");
     } catch (error) {
       setLoading(false);
       setError(error.message);
@@ -70,7 +70,7 @@ const SignUp = () => {
               disabled={loading}
               className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
             >
-              {loading ? "Loading..." : "Sign In"}
+              {loading ? "Loading..." : "Sign Up"}
             </button>
           </form>
           <div className="flex gap-2 mt-5">

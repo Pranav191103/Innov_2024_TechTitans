@@ -9,6 +9,7 @@ import FirstLevelCard from "./pages/Level1.jsx";
 import SixLevelCard from "./pages/Level6.jsx";
 import TwoLevelCard from "./pages/Level2.jsx";
 import FourthLevelCard from "./pages/Level4.jsx";
+import ThirdLevelCard from "./pages/Level3.jsx";
 let isAuthPage = "";
 
 const HeaderContainer = () => {
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/level6" element={<SixLevelCard />} />
         <Route path="/level2" element={<TwoLevelCard />} />
         <Route path="/level4" element={<FourthLevelCard />} />
+        <Route path="/level3" element={<ThirdLevelCard />} />
       </Routes>
     </BrowserRouter>
   );

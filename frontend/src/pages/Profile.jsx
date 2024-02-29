@@ -14,19 +14,19 @@ const UserProfile = () => {
             />
           </div>
           <div className="text-center mt-4">
-            <h1 className="text-2xl font-semibold">John Doe</h1>
-            <p className="text-gray-600 mt-2">john.doe@example.com</p>
+            <h1 className="text-2xl font-semibold">Pranav kadam</h1>
+            <p className="text-gray-600 mt-2">pranavkadam1911@gmail.com</p>
           </div>
           <div className="border-t border-gray-300 mt-4"></div>
           <div className="mt-4">
             <h2 className="text-lg font-semibold">User Information</h2>
             <div className="mt-2">
               <p>
-                <span className="font-semibold">Username:</span> johndoe123
+                <span className="font-semibold">Username:</span> pranav
               </p>
               <p>
-                <span className="font-semibold">Date of Birth:</span> January 1,
-                1990
+                <span className="font-semibold">Date of Birth:</span> January
+                19, 1990
               </p>
               <p>
                 <span className="font-semibold">Address:</span> 123 Main Street,
