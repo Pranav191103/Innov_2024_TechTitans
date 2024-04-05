@@ -23,9 +23,6 @@ start();
 app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/language", languageRouter);
-app.get("/", (req, res) => {
-  res.send(`${port}`);
-});
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "internal server error";
